@@ -7,7 +7,8 @@ from tinymce.models import HTMLField
 class Idea(models.Model):
     subject = models.CharField(max_length=25)
     body = HTMLField('Body', null=False, blank=False, default='Nothing')
-    author = models.ForeignKey('account.User', on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        'account.User', on_delete=models.CASCADE, related_name='ideas')
     IDEA_TYPES = [
         ('idea', 'ایده'),
         ('offer', 'پیشنهاد'),
