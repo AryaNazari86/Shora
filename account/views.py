@@ -6,3 +6,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 class Signin(LoginView):
     redirect_field_name = 'idea/ideas.html'
     template_name = 'account/signin.html'
+
+
+class Logout(LogoutView):
+    template_name = 'account/signout.html'

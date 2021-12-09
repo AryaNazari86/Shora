@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <link rel="icon" href="media/logo.png" />
+    {% load static %}
+    <!-- JavaScript Bundle with Popper -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    {% load static %}
+    <!-- CSS only -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="{% static 'https://fonts.googleapis.com/css?family=Lalezar' %}"
+    />
+  </head>
+  <body
+    dir="rtl"
+    style="
+      font-family: 'Lalezar';
+      background-image: url('media/bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="media/logo.png"
+            width="50"
+            height="50"
+            style="margin-left: 20px"
+          />
+          شورای پایه هشتم
+        </a>
+      </div>
+    </nav>
+    {% block content %} {% endblock %}
+    <div class="container" style="position: absolute; bottom: 0">
+      <footer
+        class="
+          d-flex
+          flex-wrap
+          justify-content-between
+          align-items-center
+          py-3
+          my-4
+          border-top
+        "
+      >
+        <div class="col-md-4 d-flex align-items-center">
+          <a
+            href="/"
+            class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+          >
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <span
+            >وبسایت شورای دانش آموزی پایه هشتم مدرسه علامه حلی ۳
+            <br />
+            <abbr title="nazariarya86@gmail.com"> آریا نظری </abbr>
+          </span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-muted" href="#"
+              >
+              <image src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1021px-WhatsApp.svg.png" height="24" width="24">
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="https://kelasgardi.com/"
+              ><image src="https://kelasgardi.com/pluginfile.php/1/theme_edumy/headerlogo_mobile/1638033668/png1-02.png" height="24" width="24">
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="https://allamehelli3.ir/"
+              ><image src="https://allamehelli3.ir/pluginfile.php/1/theme_moove/favicon/1633845105/5fdf15bf892f3.256px.ico" height="24" width="24">
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"
+              ><image src="https://bale.ai/img/l.svg" height="24" width="24">
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
