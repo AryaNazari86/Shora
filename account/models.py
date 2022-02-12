@@ -31,7 +31,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
     image = models.ImageField(
-        upload_to='images/accounts/', default='images/default_account.png', blank=True, null=True)
+        upload_to='images/accounts/', default='default_account.jpg', blank=True, null=True)
 
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now_add=True)

@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
-    <link rel="icon" href="media/logo.png" />
+    <title>شورا دوره ۱۲</title>
+    <link rel="icon" href="/media/logo.png" />
+    {% block statics %}
+    {% endblock %}
     {% load static %}
     <!-- JavaScript Bundle with Popper -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
@@ -19,43 +21,57 @@
       rel="stylesheet"
       href="{% static 'https://fonts.googleapis.com/css?family=Lalezar' %}"
     />
+    <script src="https://cdn.tiny.cloud/1/xp8dkzpflxd1ooh13zd5kj123r0iep6lt8qiq1b82tytowa9/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   </head>
   <body
     dir="rtl"
     style="
       font-family: 'Lalezar';
-      background-image: url('media/bg.jpg');
+      background-image: url('/media/bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
+      display:flex; 
+      flex-direction:column; 
     "
   >
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img
-            src="media/logo.png"
+            src="/media/logo.png"
             width="50"
             height="50"
             style="margin-left: 20px"
           />
           شورای پایه هشتم
         </a>
+          {% if request.user.username %}
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="/media/default_account.jpg" alt="error" class="rounded-circle" width="32" height="32">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="{% url 'add_idea'%}">ایده بزن!</a></li>
+            <li><a class="dropdown-item" href="{% url 'ideas'%}">ایده‌ها</a></li>
+            <li><a class="dropdown-item" href="https://allamehelli3.ir">سامانه مدرسه</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{%url 'logout'%}">خارج شو!</a></li>
+          </ul>
+        </div>
+        {% else %}
+        <a class="d-flex btn btn-secondary" href="{% url 'signin'%}">وارد شو!</a>
+          {% endif %}
       </div>
     </nav>
     {% block content %} {% endblock %}
-    <div class="container" style="position: absolute; bottom: 0">
-      <footer
-        class="
-          d-flex
-          flex-wrap
-          justify-content-between
-          align-items-center
-          py-3
-          my-4
-          border-top
-        "
-      >
+    
+    
+    
+    <div class="container">
+        <footer class=" footer mt-auto d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
           <a
             href="/"
@@ -86,7 +102,7 @@
           </li>
           <li class="ms-3">
             <a class="text-muted" href="https://allamehelli3.ir/"
-              ><image src="https://allamehelli3.ir/pluginfile.php/1/theme_moove/favicon/1633845105/5fdf15bf892f3.256px.ico" height="24" width="24">
+              ><image style="filter: drop-shadow(0 0 0.1rem white); " src="https://allamehelli3.ir/pluginfile.php/1/theme_moove/favicon/1633845105/5fdf15bf892f3.256px.ico" height="24" width="24" >
             </a>
           </li>
           <li class="ms-3">
@@ -96,6 +112,8 @@
           </li>
         </ul>
       </footer>
-    </div>
+      </div>
+    
+  
   </body>
 </html>

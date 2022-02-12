@@ -11,17 +11,16 @@
   style="
     background-color: white;
     border-radius: 50px;
-    margin-top: 5%;
+    margin-top: 80px;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 5%;
     padding: 3%;
     display: flex;
     height: 600px;
   "
 >
   <form
-    action="{% url 'signin'%}"
+    action="{% url 'signup'%}"
     method="post"
     style="flex: 3; padding: 7%"
     class="align-self-center"
@@ -41,6 +40,28 @@
 
     <div class="input-group input-group-lg" style="margin-bottom: 30px; min-width: 40%;">
       <input
+      type="text"
+
+        class="form-control"
+        aria-describedby="passwordHelpBlock"
+        placeholder="نام"
+        name="first_name"
+      />
+    </div>
+
+    <div class="input-group input-group-lg" style="margin-bottom: 30px; min-width: 40%;">
+      <input
+      type="text"
+
+        class="form-control"
+        aria-describedby="passwordHelpBlock"
+        placeholder="نام خانوادگی"
+        name="last_name"
+      />
+    </div>
+
+    <div class="input-group input-group-lg" style="margin-bottom: 30px; min-width: 40%;">
+      <input
         type="password"
         id="inputPassword5"
         class="form-control"
@@ -48,6 +69,10 @@
         placeholder="رمز عبور"
         name="password"
       />
+    </div>
+
+    <div class="mb-3">
+      <input class="form-control" name="image" type="file" id="formFile">
     </div>
 
     <div class="text-center">

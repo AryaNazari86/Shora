@@ -1,0 +1,25 @@
+.articles {
+    
+    margin: 3% 20% 0% 20% ;
+    
+}
+.article > h2 {
+    margin: 8px;
+}
+
+.article > p {
+    margin: 1% 2.5% 1% 2.5%;
+}
+
+.article {
+    border-color: rgba(143, 143, 143);
+    background-color:white;
+    border-width: 10px;
+    margin-bottom: 3%;
+}
+
+.time {
+    text-align: left;
+    font-size: small;
+    color: rgb(143, 143, 143);
+}

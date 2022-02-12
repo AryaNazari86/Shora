@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block statics %} {% load static %}
+<link href="{% static 'home.css' %}" rel="stylesheet" /> {% endblock %} 
+{% block content %}
+<div class="articles">
+  {% for article in articles %}
+  <div class="article">
+    
+    <img src={{article.image.url}} width="95%" style="margin-left: 2.5%; margin-right: 2.5%; margin-top: 2.5%;" />
+    <h2>{{article.subject}}</h2>
+    <p>{{article.body}}</p>
+
+    <p class="time" dir="ltr">{{article.date_added}}</p>
+    
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

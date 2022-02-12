@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from django.urls import reverse
 
 # Create your models here.
 
@@ -29,3 +30,8 @@ class Idea(models.Model):
         choices=PROGRESS_SESSIONS,
         default='در حال انتظار'
     )
+
+    respond = models.TextField(null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse("idea_preview", kwargs={"id": self.id})
